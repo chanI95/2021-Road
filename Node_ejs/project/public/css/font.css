@@ -1,0 +1,60 @@
+/* 폰트 적용 */
+@font-face{
+    font-family: '행복고흥M';
+    src: url('../font/행복고흥M.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face{
+    font-family: '행복고흥B';
+    src: url('../font/행복고흥B.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face{
+    font-family: '정속언해M';
+    src: url('../font/ON 정속언해R.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '정속언해M';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/OTJeongsogeonhaeRA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HS유지체';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSYuji-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TT투게더';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '고운돋움';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '마루부리';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '초콜렛';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '인피니티';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-CondBoldA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

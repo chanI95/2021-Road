@@ -1,0 +1,54 @@
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="/css/board.css">
+<link rel="stylesheet" href="/css/boardcontent.css">
+<!--  bulma -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+
+    <div class="content">
+        <form action="../update/" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="board_seq" value = "<%= board.board_seq %>">
+            <div class="board-form">
+                <!-- 타이틀 -->
+                <p class="board-tag">community/write<p>
+                <div class="board-title">
+                    <div class="form-group">
+                        <label for="my-input">title</label>
+                        <input id="my-input" value= "<%=board.board_content%>" class="form-control" type="text" name="board_title" disabled>
+                    </div>
+                </div>
+                <!-- 작성자 -->
+                <div class="board-user">
+                    <div class="form-group">
+                        <label for="my-input">user</label>
+                        <input id="my-input" value="<%=board.boarder_name%>" class="form-control" type="text" name="boarder_name" disabled>
+                    </div>
+                </div>
+                <!-- 작성 내용 -->
+                <div class="board-content">
+                    <div class="form-group">
+                        <label for="my-input">content</label>
+                        <div class="boardcontent-content">
+                            <div contentEditable="true">
+                                <img class="img-thumbnail" src="../../images/<%=board.board_img%>" width="100" alt="">
+                                <textarea class="textarea has-fixed-size" style="height:300px;" placeholder="Fixed size textarea" id="my-input" class="form-control" type="text" name="board_content" readonly><%=board.board_content%> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="board-content-img">
+                    <div class="form-group">
+                        <label for="my-input">img</label>
+                    </div>
+                </div>
+                이미지 -->
+                <button class="btn btn-primary" type="submit"></button>
+            </div>
+        </form>
+    </div>
+
+
+
+<%- include('./partials/footer.ejs') %>
+

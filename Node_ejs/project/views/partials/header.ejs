@@ -1,0 +1,108 @@
+<!--
+    2021.11.06
+    1. 로그아웃과 로그인 헤더를 구분지어둠
+       - 로그아웃인 경우 : header_logout
+       - 로그인인 경우 : header
+    2. 상단의 지도 삭제 시켜 둠
+    3. css 와 js 최소한으로 구성하도록 진행
+    4. mbti 메뉴 추가
+    5. 좌우 꽉 채우는 방식으로 변경
+    6. 폰트 변경
+       - 메뉴 : TT투게더
+       - 그 외 : 고운돋움
+    7. 가로 슬라이드 바 나오는 문제 해결
+       - 메뉴의 row가 문제여서 삭제 이후 너비 맞추기 작업 진행
+
+-->
+
+<!--
+    추후 진행 해야 하는 부분
+    - 서버 시간 완성하기
+    - 헤더 라인 예쁘게 정리하기
+    - css 깔끔하게 정리하기 : 필요없는거 최대한 삭제하기
+    - 로고와 메뉴 버튼 맞추기
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <title>로드</title>
+
+</head>
+<body>
+
+    <!--
+        로딩창 추후에 구현할 수 있으면 구현하도록 하기
+        구현 방식은 메뉴를 넘어갈때 약간의 이벤트를 주는 것
+        html과 css로만 만들 수 없으면 당장 포기하기 (javascript 최소화)
+    -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+<!----------------------            본문        -------------------------->
+
+    <div class="pre-header">
+        <div class="top_01">
+            <setion class="clock">
+                <!-- 시간 출력하는 곳 (해결이 필요 함) -->
+                <span class="data" onload="clock()"></span>
+                <span>Seoul Korea</span>
+            </setion>
+        </div>
+        <div class="top_02">
+            <div class="pre-header-menu1"><i class="bi bi-person-circle"></i><a href="http://localhost:3000/index">LOGOUT</a></div>
+            <!-- 언어 선택 -->
+            <select class="select-box">
+                <option class="option-list" value selected="selected">EN</option>
+                <option class="option-list" value="">KO</option>
+            </select>
+        </div>
+    </div>
+
+
+    <!-- 메뉴-->
+    <!-- <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.01s" data-wow-delay="0s">-->
+    <header class="header-area header-sticky menu">
+        <nav class="main-nav">
+            <a href="http://localhost:3000/index" class="logo">
+                <img class="head-logo" src="../img/logo.png" alt="#">
+            </a>
+            <ul class="nav">
+                <li class="scroll-to-section"><a href="http://localhost:3000/introduction">Introduction</a></li>
+                <li class="scroll-to-section" id="item"><a href="http://localhost:3000/map">Recommendation</a></li>
+                <li class="scroll-to-section"><a href="http://localhost:3000/drink/page=1">Drinks</a></li>
+                <li class="scroll-to-section"><a href="http://localhost:3000/board">Community</a></li>
+                <li class="scroll-to-section"><a href="http://localhost:3000/mbti/mbti1">MBTI</a></li>
+                <!--<li class="scroll-to-section"><a href="#Review">Review</a></li>-->
+                <!--<li class="scroll-to-section"><div class="border-first-button"><a href="#contact">Free Quote</a></div></li> -->
+            </ul>
+
+        </nav>
+    </header>
+</div>
+
+
+<!--js-->
+
+
+</body>
+
+</html>

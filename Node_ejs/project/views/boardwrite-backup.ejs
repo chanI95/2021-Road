@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!--  bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>로드</title>
+<body>
+
+<header>
+    <%- include('./partials/header.ejs') -%>
+</header>
+
+
+<div class="content">
+    <form action="/board" method="post" enctype="multipart/form-data">
+        <div class="board-form">
+            <!-- 타이틀 -->
+            <p class="board-tag">community/write<p>
+
+            <div class="board-title">
+                <div class="form-group">
+                    <label for="my-input">title</label>
+                    <input id="my-input" class="form-control" type="text" name="board_title">
+                </div>
+            </div>
+
+            <!-- 작성자 -->
+            <div class="board-user">
+                <div class="form-group">
+                    <label for="my-input">user</label>
+                    <input id="my-input" class="form-control" type="text" name="boarder_name">
+                </div>
+            </div>
+            <!-- 작성자 -->
+            <div class="board-content">
+                <div class="form-group">
+                    <label for="my-input">content</label>
+                    <textarea class="textarea has-fixed-size" placeholder="Fixed size textarea" id="my-input" class="form-control" type="text" name="board_content"></textarea>
+                </div>
+            </div>
+            <!-- 이미지 -->
+            <div class="board-img">
+                <div class="form-group">
+                    <label for="my-input">img</label>
+                    <input id="my-input" class="form-control-file" type="file" name="board_img">
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">write</button>
+        </div>
+    </form>
+</div>
+
+
+<%- include('./partials/footer.ejs') %>
+</body>
+</html>

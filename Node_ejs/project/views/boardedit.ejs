@@ -1,0 +1,80 @@
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="/css/community.css">
+<!--  bulma -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+<div class="columns" style="width:1902px; margin-top:20px;"></div>
+<form action="../update/" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="board_seq" value = "<%= board.board_seq %>">
+    <div class="columns has-background-light">
+        <div class="column"></div>
+        <div class="column is-half has-background-white" style="margin-top:50px; margin-bottom:50px; border-radius: 2%; height:600px; padding:20px 50px;">
+            <div class="columns">
+                <div class="column is-10"></div>
+                <div class="column is-1">community/edit</div>
+            </div>
+
+            <!-- 타이틀 -->
+            <div class="field is-horizontal">
+                <div class="is-normal" style="text-align: right; width:50px; margin-right:10px; line-height: 30px; ">
+                    <label class="label">title</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input class="input" id="my-input" value= "<%=board.board_title%>" type="text" name="board_title">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 작성자 -->
+            <div class="field is-horizontal">
+                <div class="is-normal" style="text-align: right; width:50px; margin-right:10px; line-height: 30px; ">
+                    <label class="label">user</label>
+                </div>
+                <div class="field-body" >
+                    <div class="field">
+                        <p class="control ">
+                            <input class="input" value= "<%=board.boarder_name%>" class="form-control-file" id="my-input" type="text" name="boarder_name">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 이미지 -->
+            <div class="field is-horizontal">
+                <div class="is-normal" style="text-align: right; width:50px; margin-right:10px; line-height: 30px; ">
+                    <label class="label">img</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <img class="img-thumbnail" style="display: none;" src="../../images/<%=board.board_img%>" width="100" alt="">
+                            <input id="my-input" class="form-control-file" type="file" name="board_img">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 컨텐츤 -->
+            <div class="field is-horizontal">
+                <div class="is-normal" style="text-align: right; width:50px; margin-right:10px; line-height: 30px; ">
+                    <label class="label">content</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <textarea class="textarea has-fixed-size" style="height:300px;" placeholder="Fixed size textarea" id="my-input" class="form-control" type="text" name="board_content" ><%=board.board_content%></textarea>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="button is-danger" style="float:right; margin-right:10px;" type="submit">edit</button>
+        </div>
+        <div class="column"></div>
+    </div>
+</form>
+
+
+
+<%- include('./partials/footer.ejs') %>

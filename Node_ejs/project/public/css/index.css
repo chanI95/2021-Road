@@ -1,0 +1,787 @@
+/**
+
+2021.11.05.
+잘 몰랐을때 만들었던거라서
+제일 css가 중구난방함
+여기 정리가 필요함
+
+ */
+
+
+
+/*Header*/
+h1, h2{text-shadow:none; text-align:center;}
+h1{ color: #666; text-transform:uppercase;  font-size:36px;}
+h2{ color: #7f8c8d; font-family: Neucha, Arial, sans serif; font-size:18px; margin-bottom:30px;}
+
+
+/* 첫번째 슬라이드 쇼 */
+/* 2021.11.05 css로만 슬라이드 쇼 구현하기 시도 */
+/* 자동 슬라이드, 현재 버튼 이미지 적용 되지 않음 현상 있음 */
+
+slidebox{
+    box-sizing: border-box;
+}
+slidebox ul, slidebox li{
+    list-style:none;
+}
+
+[name="slide"]{
+    display:none;
+}
+
+.slidebox{
+    max-width:1903px;
+    height:800px;
+    width:100%;
+    margin:0 auto;
+}
+.slidebox img{
+    max-width:100%;
+}
+.slidebox .slidelist{
+    white-space: nowrap;
+    font-size:0;
+    overflow:hidden;
+}
+.slidebox .slideitem{
+    position:relative;
+    display:inline-block;
+    vertical-align: middle;
+    width:100%;
+    transition:all .35s;
+}
+.slidebox .slideitem label{
+    position:absolute;;
+    z-index:1;
+    top:50%;
+    transform:translateY(-50%);
+    padding:20px;
+    border-radius:50%;
+    cursor: pointer;
+}
+
+label.left{
+    left:20px;
+    background-color:#eee;
+    opacity: 0.5;
+    background-position:center center;
+    background-size:50%;
+    background-repeat:no-repeat;
+}
+label[class="left"] i{
+    left:30px;
+    opacity: 0.5;
+    color:#A33333;
+    background-position:center center;
+    background-size:50%;
+    background-repeat:no-repeat;
+}
+
+label.right{
+    right:20px;
+    opacity: 0.5;
+    background-color:#eee;
+    background-position:center center;
+    background-size:50%;
+    background-repeat:no-repeat;
+}
+[id="slide01"]:checked ~ .slidelist .slideitem {
+    transform: translateX(0);
+    animation: slide01 20s infinite;
+}
+[id="slide02"]:checked ~ .slidelist .slideitem{
+    transform: translateX(-100%);
+    animation: slide02 20s infinite;
+}
+[id="slide03"]:checked ~ .slidelist .slideitem{
+    transform: translateX(-200%);
+    animation: slide03 20s infinite;
+}
+[id="slide04"]:checked ~ .slidelist .slideitem{
+    transform: translateX(-300%);
+    animation: slide04 20s infinite;
+}
+[id="slide05"]:checked ~ .slidelist .slideitem{
+    transform: translateX(-400%);
+    animation: slide04 20s infinite;
+}
+@keyframes slide01 {
+    0% {left:0%;}
+    18% {left:0%;}
+    20% {left:-100%;}
+    38% {left:-100%;}
+    40% {left:-200%;}
+    58% {left:-200%;}
+    60% {left:-300%;}
+    78% {left:-300%;}
+    80% {left:-400%;}
+    98% {left:-400%;}
+    100% {left:0%;}
+}
+@keyframes slide02 {
+    0% {left:0%;}
+    18% {left:0%;}
+    20% {left:-100%;}
+    38% {left:-100%;}
+    40% {left:-200%;}
+    58% {left:-200%;}
+    60% {left:200%;}
+    78% {left:200%;}
+    80% {left:100%;}
+    98% {left:100%;}
+    100% {left:0%;}
+}
+@keyframes slide03 {
+    0% {left:0%;}
+    18% {left:0%;}
+    20% {left:-100%;}
+    38% {left:-100%;}
+    40% {left:300%;}
+    58% {left:300%;}
+    60% {left:200%;}
+    78% {left:200%;}
+    80% {left:100%;}
+    98% {left:100%;}
+    100% {left:0%;}
+}
+@keyframes slide04 {
+    0% {left:0%;}
+    18% {left:0%;}
+    20% {left:400%;}
+    38% {left:400%;}
+    40% {left:300%;}
+    58% {left:300%;}
+    60% {left:200%;}
+    78% {left:200%;}
+    80% {left:100%;}
+    98% {left:100%;}
+    100% {left:0%;}
+}
+@keyframes slide05 {
+    0% {left:0%;}
+    18% {left:0%;}
+    20% {left:400%;}
+    38% {left:400%;}
+    40% {left:300%;}
+    58% {left:300%;}
+    60% {left:200%;}
+    78% {left:200%;}
+    80% {left:100%;}
+    98% {left:100%;}
+    100% {left:0%;}
+}
+
+/*** 두번째 컨텐츠 시작 ***/
+
+
+.second-contents{
+    margin:50px 10px 10px 10px;
+    max-width:1900px;
+    display:flex;
+    height:400px;
+    flex-direction: row;
+}
+
+/* 환영 문구 */
+.second-contents .contents{
+    width:800px;
+    height:400px;
+    float:right;
+}
+
+.second-contents .title{
+    height:150px;
+    margin-top:130px;
+    margin-left:150px;
+}
+
+.second-contents .title p, .second-contents .title span{
+    margin-top:30px;
+    font-family: '행복고흥B';
+    font-size:100px;
+}
+/* 광주와 전라도만 색 변경 */
+.second-contents .title p{
+    color:black;
+}
+.gangju{
+    color:#a33333;
+}
+.jeolla-do{
+    color:#dbcf60;
+}
+
+/* 아래 작은 소개글 */
+.second-contents .text{
+    margin-left:150px;
+}
+.second-contents .text span{
+    font-size:18px;
+}
+
+/******* 두번째 컨텐츠 슬라이드 *******/
+/* 아 젠장 개 빡치네 */
+.section input[id*="slide"] {display:none;}
+.section .second-slidewrap {max-width:1200px;margin:0 auto;}
+.section .second-slidelist {white-space:nowrap;font-size:0;overflow:hidden;position:relative;}
+.section .second-slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+.section .second-slidelist > li > a {display:block;position:relative;}
+.section .second-slidelist > li > a img {width:500px; margin:0 50px;}
+.section .second-slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+.section .second-slidelist .textbox {
+    width: 529px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+    line-height: 1.6;
+    text-align: left;
+}
+.section .second-slidelist .textbox h3 {font-size:36px;color:black;;transform:translateY(30px);transition:all .5s;}
+.section .second-slidelist .textbox p {font-size:16px;color:black;opacity:0;transform:translateY(30px);transition:all .5s;}
+
+/* input에 체크되면 슬라이드 효과 */
+.section input[id="second-slide01"]:checked ~ .second-slidewrap .second-slidelist > li {transform:translateX(0%);}
+.section input[id="second-slide02"]:checked ~ .second-slidewrap .second-slidelist > li {transform:translateX(-100%);}
+.section input[id="second-slide03"]:checked ~ .second-slidewrap .second-slidelist > li {transform:translateX(-200%);}
+.section input[id="second-slide04"]:checked ~ .second-slidewrap .second-slidelist > li {transform:translateX(-300%);}
+.section input[id="second-slide05"]:checked ~ .second-slidewrap .second-slidelist > li {transform:translateX(-400%);}
+
+/* input에 체크되면 텍스트 효과 */
+.section input[id="second-slide01"]:checked ~ .second-slidewrap li:nth-child(1) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+.section input[id="second-slide01"]:checked ~ .second-slidewrap li:nth-child(1) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+.section input[id="second-slide02"]:checked ~ .second-slidewrap li:nth-child(2) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+.section input[id="second-slide02"]:checked ~ .second-slidewrap li:nth-child(2) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+.section input[id="second-slide03"]:checked ~ .second-slidewrap li:nth-child(3) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+.section input[id="second-slide03"]:checked ~ .second-slidewrap li:nth-child(3) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+.section input[id="second-slide04"]:checked ~ .second-slidewrap li:nth-child(4) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+.section input[id="second-slide04"]:checked ~ .second-slidewrap li:nth-child(4) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+.section input[id="second-slide05"]:checked ~ .second-slidewrap li:nth-child(5) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+.section input[id="second-slide05"]:checked ~ .second-slidewrap li:nth-child(5) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+
+/* 좌,우 슬라이드 버튼 */
+.slide-control > div {display:none;}
+.section .second-left {left:30px;background:url('./img/left.png') center center / 100% no-repeat;}
+.section .second-right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
+.section input[id="second-slide01"]:checked ~ .second-slidewrap .slide-control > div:nth-child(1) {display:block;}
+.section input[id="second-slide02"]:checked ~ .second-slidewrap .slide-control > div:nth-child(2) {display:block;}
+.section input[id="second-slide03"]:checked ~ .second-slidewrap .slide-control > div:nth-child(3) {display:block;}
+.section input[id="second-slide04"]:checked ~ .second-slidewrap .slide-control > div:nth-child(4) {display:block;}
+.section input[id="second-slide05"]:checked ~ .second-slidewrap .slide-control > div:nth-child(5) {display:block;}
+
+/* 페이징 */
+.slide-pagelist {text-align:center;padding:20px;}
+.slide-pagelist > li {display:inline-block;vertical-align:middle;}
+.slide-pagelist > li > label {display:block;padding:8px 30px;border-radius:30px;background:#ccc;margin:20px 10px;cursor:pointer;}
+.section input[id="second-slide01"]:checked ~ .second-slidewrap .slide-pagelist > li:nth-child(1) > label {background:#999;}
+.section input[id="second-slide02"]:checked ~ .second-slidewrap .slide-pagelist > li:nth-child(2) > label {background:#999;}
+.section input[id="second-slide03"]:checked ~ .second-slidewrap .slide-pagelist > li:nth-child(3) > label {background:#999;}
+.section input[id="second-slide04"]:checked ~ .second-slidewrap .slide-pagelist > li:nth-child(4) > label {background:#999;}
+.section input[id="second-slide05"]:checked ~ .second-slidewrap .slide-pagelist > li:nth-child(5) > label {background:#999;}
+
+/* 이미지 크기 */
+.second-slideitem img{
+    width:50px;
+    height:300px;
+}
+
+
+.portfolio-item {
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    margin: 15px;
+}
+
+.portfolio-item .thumb {
+    position: relative;
+    border-radius: 50px;
+    height: 180px;
+}
+
+
+.portfolio-item:hover .down-content h4,
+.portfolio-item:hover .down-content span {
+    color: #fe664e;
+}
+
+.portfolio-item .thumb img {
+    border-top-right-radius: 23px;
+    border-top-left-radius: 23px;
+    overflow: hidden;
+    height: 180px;
+}
+
+.portfolio-item .down-content {
+    background-color: #fff;
+    text-align: left;
+    padding: 18px 0px;
+    border-bottom-right-radius: 23px;
+    border-bottom-left-radius: 23px;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.portfolio-item .down-content span {
+    font-size: 18px;
+    color: #afafaf;
+    transition: all .3s;
+}
+
+
+
+
+
+
+/* 해시태그 */
+.hastage{
+    text-align: center;
+    overflow: hidden;
+    position:relative;
+    width:940px;
+    margin:0 auto 30px auto;
+    margin-top:40px;
+}
+
+button.hastage-gwang{
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 0 0 10px;
+    height: 40px;
+    width: 150px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+button.hastage-gwang:hover{
+    background-color:#A33333;
+    opacity: 1;
+    color:white;
+    border: 1px solid white;
+}
+
+button.active-gwang{
+    background-color:#A33333;
+    opacity: 1;
+    color:white;
+    border: 1px solid white;
+}
+
+.line2{
+    margin-top: 20px;
+}
+.line3{
+    width:1902px;
+    border-top:1px solid #afafaf;
+    margin:auto;
+}
+
+button.hastage-jeolla{
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 0 0 10px;
+    height: 40px;
+    width: 150px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+button.hastage-jeolla:hover{
+    background-color:#dbcf60;
+    opacity: 1;
+    color:white;
+    border: 1px solid white;
+}
+
+button.active-jeolla{
+    background-color:#dbcf60;
+    opacity: 1;
+    color:white;
+    border: 1px solid white;
+}
+
+
+/* 추천서비스 */
+.recommend{
+    margin:0 auto 30px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:1703px;
+    height:600x;
+    position:relative;
+}
+.recommend .recommend-title{
+    padding:32px 0 0;
+    position:relative;
+    width:940px;
+    margin:0 auto;
+}
+
+.recommend .recommend-title h2{
+    font-family: '행복고흥B';
+    width: 100%;
+    height: 20px;
+    left: 0px;
+    font-size: 42px;
+    color: black;
+}
+
+.rocommend .recommend-title button:after{
+    content:'';
+    display:block;
+    width:100%;
+    height:1px;
+    background:#333;
+    margin-top:2px;
+}
+
+.recommend .owl-carousel .owl-item{
+    width:230px !important;
+}
+
+.recommend .recommend-contents{
+    margin:30px auto 10px auto;
+    left:30%;
+    height:300px;
+}
+
+.recommend .recommend-contents .row{
+    width:1200px;
+    margin:auto;
+}
+
+.recommend .recommend-contents .portfolio-item{
+    width:200px;
+
+}
+
+.recommend .recommend-contents .down-content{
+    height:50px;
+    padding:13px 0px;
+    text-align: center;
+}
+
+.recommend .recommend-contents .down-content span{
+    font-size:1em;
+}
+
+.recommend .recommend-contents-wrapper{
+    margin-top:10px;
+    display:flex;
+    position:relative;
+    width:100%;
+    height:100%;
+    z-index:1;
+    justify-content: space-around;
+}
+
+.recommend-contents-slide{
+    float:left;
+    padding:0 10px;
+    width: 320px !important;
+    height:290px;
+
+}
+
+.recommend-contents-slide a{
+    display:block;
+    height:100%;
+    background:#fff;
+    border-radius:20px;
+    box-shadow: 10px 10px 3px -3px #ebebeba4;
+}
+
+.recommend-contents-slide span{
+    height:100%;
+    width:320px;
+    text-align:center;
+}
+
+.recommend-contents-img img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height:200px;
+}
+
+
+/* 추천서비스 슬라이드 버튼 */
+.recommend .owl-nav {
+    display: flex;
+    justify-content: center;
+}
+.recommend .owl-nav button{
+    background:none;
+    color:inherit;
+    border: none;
+    padding: 0 !important;
+}
+.recommend .owl-nav button span{
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    font-size: 30px;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.recommend .owl-nav button span:hover{
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    font-size: 30px;
+    background-color: #A33333;
+    border-radius: 50%;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+
+
+/* 체험속으로 */
+/* 캘린더 상단 버튼*/
+.box-calendar{
+    padding:30px 0 10px;
+    text-align: center;
+    width: 1902px;
+    margin:0 auto;
+}
+
+.box-calendar .calendar-top{
+    position:relative;
+    display:inline-block;
+    margin:0 auto;
+}
+
+.box-calendar .calendar-top .btn-prev{
+    left:-80px;
+    position: absolute;
+    z-index: 10;
+    width: 22px;
+    height: 22px;
+    top: 6px;
+    font-size: 0;
+}
+.box-calendar .calendar-top .btn-prev .ico{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-size: 50px;
+    border-radius: 50%;
+    color: #A33333;
+    margin-left: 30px;
+}
+
+.box-calendar .calendar-top .title{
+    position:relative;
+    padding:7px 0 19px 0;
+    text-align: center;
+}
+
+
+.box-calendar .calendar-top .title p{
+    display: inline-block;
+    font-size: 42px !important;
+    color: #A33333;
+    font-family: '행복고흥B';
+    margin-top: 15px;
+}
+
+.box-calendar .calendar-top .title img{
+    margin-right: 4px;
+}
+
+.box-calendar .calendar-top .btn-next{
+    left:230px;
+    position: absolute;
+    z-index: 10;
+    width: 22px;
+    height: 22px;
+    top: 6px;
+    font-size: 0;
+}
+.box-calendar .calendar-top .btn-next .ico{
+    width: 150px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-size: 50px;
+    border-radius: 50%;
+    color: #A33333;
+    margin-left: 30px;
+}
+
+
+
+.box-calendar .calendar-top .btn-more{
+    position:absolute;
+    top:18px;
+    right:-330px;
+    color:#333;
+    font-size:14px;
+    text-align: center;
+    padding-left:19px;
+}
+
+button{
+    border:0 none;
+    background-color:transparent;
+    cursor:pointer;
+}
+/* 달력 */
+.active{
+    background-color: #a33333;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+/* 캘린더 내용 */
+
+.box-calendar .calendar{
+    padding:15px 0 0 ;
+    margin: 0 auto 0 auto;
+    width:980px;
+    border-top: 1px solid #eee;
+}
+.box-calendar .calendar table td{
+    word-break: normal;
+}
+
+.box-calendar .calendar table td button{
+    display: block;
+    width:32px;
+    height:23px;
+    box-sizing: border-box;
+    font-size:18px;
+    font-weight: 400;
+    color:#333;
+}
+
+.box-calendar .calendar table td.on button{
+    background-color:#dc4405;
+}
+
+.box-calendar .calendar table td button
+.box-calendar .calendar table th, .box-calendar .calendar table td{
+    color:#000;
+    text-align: center;
+}
+
+.box-calendar .calendar .saturday{
+    color:#2a7dee;
+}
+
+.box-calendar .calendar .sunday{
+    color:#dc4405;
+}
+
+/* 캘린더 이미지 */
+
+.box-calendar .calendar-list{
+    width:1902px;
+    margin:0 auto 0 auto;
+}
+.box-calendar .calendar-list .list-calData{
+    margin-top: 21px;
+    margin-bottom: 30px;
+    text-align: left;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+}
+.box-calendar .list-calData li a{
+    display:block;
+    width:500px;
+    padding:20px 20px 0;
+    height:780px;
+    border:1px solid #e6e6e6;
+    border-radius: 10px;
+}
+
+.box-calendar .list-calData li a:hover{
+    background-color:#f7f7f7;
+    border-radius: 10px;
+}
+
+.box-calendar .calendar-list .calendar-img img{
+    display:block;
+    height: 480px;
+    width: 458px;
+    border-radius:8px;
+    margin:0 0 17px;
+    background-position: 50% 50%;
+    background-size:cover;
+    background-repeat:no-repeat;
+    text-indent: -9999px;
+}
+
+/* 캘린더 글자 크기 수정 */
+.calendar-date{
+    font-size: 16px;
+    font-family: '초콜렛';
+    font-weight: bolder;
+    color:#6a6a6a;
+}
+.calendar-title{
+    font-size: 24px;
+    font-family: 'TT투게더';
+}
+.calendar-text{
+    font-size:14px;
+}
+
+/* 여행지 사진 추천 */
+
+
+.activity{
+    width:1902px;
+    height:400px;
+    margin:50px auto 100px auto;
+    padding: 0 20px 27px;
+}
+
+.activity .activity-top{
+    width:1902px;
+    position:relative;
+    display:inline-block;
+    margin:0 auto 20px auto;
+}
+
+.activity .activity-top p{
+    color: #A33333;
+    font-size: 42px;
+    text-align: center;
+    font-family: '행복고흥B';
+}
+
+
+.area{
+    display: flex;
+    justify-content: center;
+}
+
+
+.imgView img{
+    width: 100%;
+    height: 400px;
+}

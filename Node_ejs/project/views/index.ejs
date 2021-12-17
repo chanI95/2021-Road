@@ -1,0 +1,394 @@
+<!--
+    2021. 11. 05.
+    index 다시 재 구성하기 시작함
+    1. 첫번째 슬라이드 코드 변경 ( javascript -> css )
+       - 슬라이드 다시 구현 / 1903px x 790px 로 제작할 것
+    2021. 11. 06.
+    1. 첫번째 슬라이드 구성 변경
+       - 첫번째 슬라이드 이미지에 크기에 맞춰서 제작하다 보니 전체적으로 사이트의 너비가 줄어들게 됨
+         이 문제점을 해결하기 위해 이미지를 직접 다시 제작하였음
+       - 슬라이드를 다섯가지로 늘림
+    2. 두번째 컨텐츠 수정
+-->
+<!--
+    추후 진행해야 하는 것
+    - 두번째 컨텐츠 코드 변경하기
+    - 두번째 컨텐츠의 슬라이드 코드 변경하기
+    - 두번째 컨텐츠의 슬라이드 구성 변경하기
+    - 세번째 컨텐츠 슬라이드 구현하기
+    - 네번째 컨텐츠 달력 구현하기
+    - 다섯번째 컨텐츠 hover시 어떤 장소인지 볼 수 있게 하기
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>로드</title>
+
+</head>
+<body>
+
+<header>
+    <%- include('./partials/header.ejs') -%>
+</header>
+
+<!----------------------                            본문                            ---------------------------------------->
+
+<!-- 2021.11.06. 수정 완료 -->
+
+<div class="slidebox">
+    <input type="radio" name="slide" id="slide01" checked>
+    <input type="radio" name="slide" id="slide02">
+    <input type="radio" name="slide" id="slide03">
+    <input type="radio" name="slide" id="slide04">
+    <input type="radio" name="slide" id="slide05">
+    <ul class="slidelist">
+        <li class="slideitem">
+            <div>
+                <label for="slide04" class="left"><i class="bi bi-caret-left-fill"></i></label>
+                <label for="slide02" class="right"></label>
+                <a><img src="img/index/광주_무등산.png"></a>
+            </div>
+        </li>
+        <li class="slideitem">
+            <div>
+                <label for="slide01" class="left"><i class="bi bi-caret-left-fill"></i></label>
+                <label for="slide03" class="right"></label>
+                <a><img src="../img/index/전남_담양.png"></a>
+            </div>
+        </li>
+        <li class="slideitem">
+            <div>
+                <label for="slide02" class="left"><i class="bi bi-caret-left-fill"></i></label>
+                <label for="slide04" class="right"></label>
+                <a><img src="../img/index/전남_순천.png"></a>
+            </div>
+        </li>
+        <li class="slideitem">
+            <div>
+                <label for="slide03" class="left"><i class="bi bi-caret-left-fill"></i></label>
+                <label for="slide05" class="right"></label>
+                <a><img src="../img/index/전남_여수.png"></a>
+            </div>
+        </li>
+        <li class="slideitem">
+            <div>
+                <label for="slide05" class="left"><i class="bi bi-caret-left-fill"></i></label>
+                <label for="slide01" class="right"></label>
+                <a><img src="img/index/광주_무등산.png"></a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="second-contents">
+    <!-- 두번째 컨텐츠 -->
+    <div class="contents">
+        <div class="title">
+            <p>WELCOME TO</p>
+            <p><span class="gangju">GANGJU</span> and</p>
+            <p><span class="jeolla-do">JEOLLA-DO</span></p>
+        </div>
+        <div class="text">
+            <span>Special food experence for travelers new to korea</span>
+        </div>
+    </div>
+
+    <!-- 두 번째 슬라이드 구현 -->
+    <div class="section">
+        <input type="radio" name="slide" id="second-slide01" checked>
+        <input type="radio" name="slide" id="second-slide02">
+        <input type="radio" name="slide" id="second-slide03">
+        <div class="second-slidewrap">
+
+            <ul class="second-slidelist">
+                <!-- 슬라이드 영역 -->
+                <li class="second-slideitem">
+                    <a>
+                        <img src="../img/index/budaejjigae.jpg">
+                        <div class="textbox">
+                            <h3>BUDAEJJIGAE</h3>
+                            <p>A local specialty of Gwangyang, South Jeolla Province,
+                                <br/>this dish is prepared by seasoning thinly sliced beef immediately before cooking on a charcoal grill.
+                                <br /> Cooking the beef quickly on a copper grill with excellent heat conductivity keeps it juicy and tender.</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="second-slideitem">
+                    <a>
+                        <div class="textbox">
+                            <h3>BOLI_BIBIMBAB</h3>
+                            <p>This dish, cooked with rice or barley alone,
+                                <br/>is easy to digest and effective in preventing various health conditions.
+                                <br/>It becomes a delicacy when mixed with yeolmu kimchi (young summer radish kimchi) or
+                                <br/>gochujang (red chili paste) or served with green peppers and doenjang,
+                                <br/>a traditional Korean soybean paste.</p>
+                        </div>
+                        <img src="https://w.namu.la/s/44684a4a2989af7e4475c7a53859bc19520e13a9ae9008cec625df2206244163daf430420dfa7fceb6d55c4f37d0d19783ff3904e543b65cecb3625c7113b36e14e9bae624e7f20177a0da71b531fdd23582591b33f4942ef200226b6fe8b1a9">
+                    </a>
+                </li>
+                <li class="second-slideitem">
+                    <a>
+                        <div class="textbox">
+                            <h3>SAMGYEOBSAL</h3>
+                            <p>Frozen pork belly sliced as thinly as thin, planed strips of wood,
+                                <br /> the name “Grilled Thin-sliced Pork Belly.”
+                                <br/>Thinly sliced pork belly is prepared by grilling or stir-frying, among other cooking methods.
+                                <br/>As the pork comes frozen, it is quite affordable.</p>
+                        </div>
+                        <img src="https://post-phinf.pstatic.net/MjAyMDAzMDNfMTcg/MDAxNTgzMTkwNjA3ODQ5.kUXPHqGJ2xPDSu_3FiEoFC3kY9QyQ_g9CziCGrFSDuEg.LpCfOTbc5qth9d-GKzGv9jwj2VKhcqmPHp5cp1KJYEsg.JPEG/IM_food02.jpg?type=w1200">
+                    </a>
+                </li>
+                <li class="second-slideitem">
+                    <a>
+                        <div class="textbox">
+                            <h3>SAMGYEOBSAL</h3>
+                            <p>Frozen pork belly sliced as thinly as thin, planed strips of wood,
+                                <br /> the name “Grilled Thin-sliced Pork Belly.”
+                                <br/>Thinly sliced pork belly is prepared by grilling or stir-frying, among other cooking methods.
+                                <br/>As the pork comes frozen, it is quite affordable.</p>
+                        </div>
+                        <img src="https://post-phinf.pstatic.net/MjAyMDAzMDNfMTcg/MDAxNTgzMTkwNjA3ODQ5.kUXPHqGJ2xPDSu_3FiEoFC3kY9QyQ_g9CziCGrFSDuEg.LpCfOTbc5qth9d-GKzGv9jwj2VKhcqmPHp5cp1KJYEsg.JPEG/IM_food02.jpg?type=w1200">
+                    </a>
+                </li>
+                <li class="second-slideitem">
+                    <a>
+                        <div class="textbox">
+                            <h3>SAMGYEOBSAL</h3>
+                            <p>Frozen pork belly sliced as thinly as thin, planed strips of wood,
+                                <br /> the name “Grilled Thin-sliced Pork Belly.”
+                                <br/>Thinly sliced pork belly is prepared by grilling or stir-frying, among other cooking methods.
+                                <br/>As the pork comes frozen, it is quite affordable.</p>
+                        </div>
+                        <img src="https://post-phinf.pstatic.net/MjAyMDAzMDNfMTcg/MDAxNTgzMTkwNjA3ODQ5.kUXPHqGJ2xPDSu_3FiEoFC3kY9QyQ_g9CziCGrFSDuEg.LpCfOTbc5qth9d-GKzGv9jwj2VKhcqmPHp5cp1KJYEsg.JPEG/IM_food02.jpg?type=w1200">
+                    </a>
+                </li>
+
+                <!-- 좌,우 슬라이드 버튼 -->
+                <div class="slide-control">
+                    <div>
+                        <label for="second-slide04" class="second-left"></label>
+                        <label for="second-slide02" class="second-right"></label>
+                    </div>
+                    <div>
+                        <label for="second-slide01" class="second-left"></label>
+                        <label for="second-slide03" class="second-right"></label>
+                    </div>
+                    <div>
+                        <label for="second-slide02" class="second-left"></label>
+                        <label for="second-slide04" class="second-right"></label>
+                    </div>
+                    <div>
+                        <label for="second-slide03" class="second-left"></label>
+                        <label for="second-slide05" class="second-right"></label>
+                    </div>
+                    <div>
+                        <label for="second-slide04" class="second-left"></label>
+                        <label for="second-slide01" class="second-right"></label>
+                    </div>
+                </div>
+
+            </ul>
+            <!-- 페이징 -->
+            <ul class="slide-pagelist">
+                <li><label for="second-slide01"></label></li>
+                <li><label for="second-slide02"></label></li>
+                <li><label for="second-slide03"></label></li>
+                <li><label for="second-slide04"></label></li>
+                <li><label for="second-slide05"></label></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="line3"></div>
+<!-- 추천 서비스 -->
+<div class="recommend">
+    <div class="recommend-title">
+        <h2>
+            Recommendations for Korean Traditional Drinks
+        </h2>
+    </div>
+    <!-- 태그 -->
+    <div class="hastage">
+        <div class="line1">
+            <button type="button" class="hastage-gwang">#Donggu</button>
+            <button type="button" class="hastage-gwang">#Seogu</button>
+            <button type="button" class="hastage-gwang">#Bukgu</button>
+            <button type="button" class="hastage-gwang">#Namgu</button>
+            <button type="button" class="hastage-gwang">#Gwangsangu</button>
+            <br/>
+        </div>
+        <div class="line2">
+            <button type="button" class="hastage-jeolla">#Yeosu</button>
+            <button type="button" class="hastage-jeolla">#Gwangyang</button>
+            <button type="button" class="hastage-jeolla">#Suncheon</button>
+            <button type="button" class="hastage-jeolla">#Damyang</button>
+            <button type="button" class="hastage-jeolla">#Hwasun</button>
+        </div>
+    </div>
+    <!-- 추천사이트 내용 -->
+    <div class="recommend-contents">
+        <div class="recommend-contents-wrapper" id="curationlist">
+            <div class="recommend-contents-slide" data-swiper-slide-index="0"><a>
+                    <div class="recommend-contents-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqLBQKn6D1k6Nm3TF0ZSuRyJ16XU5HpQ9E4A&usqp=CAU"></div>
+                    <div class="down-content"><span>거목한정식</span><br/><p>광주 남구 구동 37-28</p></div>
+                </a></div>
+            <div class="recommend-contents-slide" data-swiper-slide-index="1"><a>
+                    <div class="recommend-contents-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbbISyk3irLPd_jCb9GyeHdVrJbvrMJm_KGA&usqp=CAU"></div>
+                    <div class="down-content"><span>조선옥</span><br/><p>광주 남구 노대동 528-2</p></div>
+                </a></div>
+            <div class="recommend-contents-slide" data-swiper-slide-index="2"><a>
+                    <div class="recommend-contents-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT38wA-mL0263Lq7v2jtJwO8pW0AdSFo0c8Cw&usqp=CAU"></div>
+                    <div class="down-content"><span>세자매해물칼국수</span><br/><p>광주 남구 방림동 543-1</p></div>
+                </a></div>
+            <div class="recommend-contents-slide" data-swiper-slide-index="3"><a>
+                    <div class="recommend-contents-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhpQEQtwMmokx-0u-j2resUXbAwLJMYucxJg&usqp=CAU"></div>
+                    <div class="down-content"><span>광주곱창</span><br/><p>광주 남구 봉선동 1014-8</p></div>
+                </a></div>
+        </div>
+    </div>
+    <!-- 만들고 싶었던 슬라이드 -->
+    <div class="owl-nav disabled">
+        <button type="button" role="presentation" class="owl-prev">
+            <span aria-label="Previous">‹</span>
+        </button>
+        <button type="button" role="presentation" class="owl-next">
+            <span aria-label="Next">›</span>
+        </button>
+
+    </div>
+
+    <!--
+    <div class="page">
+        <div class="recommend-contentsbar">
+            <button type="button" onclick="" class="btn-prev"><span class="ico">pre</span></button>
+            <div class="recommend-pagenume"><strong>1</strong>/<span>10</span></div>
+            <button type="button" onclick="" class="btn-next"><span class="ico">nex</span></button>
+        </div>
+    </div>
+    -->
+</div>
+<div class="line3"></div>
+<!-- 체험속으로  -->
+<div class="box-calendar">
+    <div class="calendar-top">
+        <button type="button" onclick="setNewCalendar(-1);" class="btn-prev"><span class="ico">‹</span></button>
+        <div class="title">
+            <p><img src="" class="ico">Nov, K-Cultural Experiences</p>
+        </div>
+        <button type="button" onclick="setNewCalendar(1);" class="btn-next"><span class="ico">›</span></button>
+        <a href="" class="btn-more">more</a>
+    </div>
+    <div class="calendar">
+        <table>
+            <tbody id="calendarUi">
+            <tr>
+                <td><button type="button" id="1">1</button></td>
+                <td><button type="button" id="2">2</button></td>
+                <td><button type="button" id="3">3</button></td>
+                <td><button type="button" id="4">4</button></td>
+                <td><button type="button" id="5">5</button></td>
+                <td><button type="button" class="saturday" id="6">6</button></td>
+                <td><button type="button" class="sunday" id="7">7</button></td>
+                <td><button type="button" id="8">8</button></td>
+                <td class="active"><button type="button" id="9" style="color:white;">9</button></td>
+                <td><button type="button" id="10">10</button></td>
+                <td><button type="button" id="11">11</button></td>
+                <td><button type="button" id="12">12</button></td>
+                <td><button type="button" class="saturday" id="13">13</button></td>
+                <td><button type="button" class="sunday"id="14">14</button></td>
+                <td><button type="button" id="15">15</button></td>
+                <td><button type="button" id="16">16</button></td>
+                <td><button type="button" id="17">17</button></td>
+                <td><button type="button" id="18">18</button></td>
+                <td><button type="button" id="19">19</button></td>
+                <td><button type="button" class="saturday" id="20">20</button></td>
+                <td><button type="button" class="sunday"id="21">21</button></td>
+                <td><button type="button" id="22">22</button></td>
+                <td><button type="button" id="23">23</button></td>
+                <td><button type="button" id="24">24</button></td>
+                <td><button type="button" id="25">25</button></td>
+                <td><button type="button" id="26">26</button></td>
+                <td><button type="button" class="saturday" id="27">27</button></td>
+                <td><button type="button" class="sunday"id="28">28</button></td>
+                <td><button type="button" id="29">29</button></td>
+                <td><button type="button" id="30">30</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="calendar-list">
+        <ul class="list-calData">
+            <li><a href="#" onclick="" title="">
+                    <span class="calendar-img"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMTBfMjAy%2FMDAxNjA3NTg4ODY4NDc1.mzAsLYmnBqMeXHdKdNc1PBIJHlxnSzYHQb17COsJ4pwg.MQ4kYIpsR4u-Q7G5DBts2SqV3-mDPcdwZMA3aWdfTGIg.JPEG.yeogiyou%2F1.jpg&type=sc960_832"></span>
+                    <span class="calendar-date">2021.03.01. - 2021.12.31. </span><br />
+                    <span class="calendar-title">Jindo Saturday Folklore Tour</span><br/>
+                    <span class="calendar-text">Jindo Saturday Folklore Tour's permanent performance on Jindo Island, designated as Korea's first special folk culture and arts zone, is held every Saturday at 2 pm at the Jindo Local Cultural Center grand performance hall. This is to provide opportunities for cultural and artistic experience, enjoyment, and sights to domestic and foreign tourists visiting Jindo by attracting 10,000 people and transforming Jindo-gun's excellent intangible cultural heritage into a stage play.</span>
+                </a></li>
+            <li><a href="#" onclick="" title="">
+                    <span class="calendar-img"><img src="https://www.acc.go.kr/resources/upload/1228/20211014161248_1246632832.gif"></span>
+                    <span class="calendar-date">2021.08.13. - 2021.11.14.</span><br />
+                    <span class="calendar-title">Adorable big brother </span><br/>
+                    <span class="calendar-text">The COVID-19 pandemic is penetrating the world where there is controversy over the state's surveillance and control for safety and invasion of personal privacy. The 2021 ACC Regional Asian Artist Exhibition Dear Big Brother: About Never Be Alone Again> delivers the contrast of our lives where the Panopticon and the Synopticon coexist from the perspective of Asian artists. Through the colorful works of artists based in Gwangju and Asia, we explore the possibility of a new standard for the public interest and personal dignity of today's society that cannot but coexist with COVID-19, and discuss the reality of never being alone again. It provides a forum for public debate.</span>
+                </a></li>
+            <li><a href="#" onclick="" title="">
+                    <span class="calendar-img"><img src="https://www.acc.go.kr/resources/upload/1228/20211014164029_759362720.gif"></span>
+                    <span class="calendar-date">2021.08.18. - 2021.11.14.</span><br/>
+                    <span class="calendar-title">2021 Atrts & Creative Technology Showcase</span><br/>
+                    <span class="calendar-text">The kinetic media platform 《Floating Frames》 is a system that combines a robot arm and a display, and provides a differentiated experience from existing video screenings by capturing various video creations through robot motion and three kinetic displays.</span>
+                </a></li>
+        </ul>
+    </div>
+</div>
+<div class="line3"></div>
+<!-- 여행지 사진 추천 -->
+<div class="activity">
+    <div class="activity-top">
+        <p>Photos for Sightseeing</p>
+    </div>
+    <div class="area">
+        <div class="imgView">
+            <a href=""><img src="../img/index/관광지1.jpg"></a>
+        </div>
+        <div class="imgView">
+            <a href=""><img src="../img/index/관광지2.jpg"></a>
+        </div>
+        <div class="imgView">
+            <a href=""><img src="../img/index/관광지3.jpg"></a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- footer -->
+<%- include('./partials/footer.ejs') -%>
+
+</body>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/index.js" defer type="text/javascript"></script>
+<script src="js/header-footer.js" defer type="text/javascript"></script>
+
+
+
+
+</html>

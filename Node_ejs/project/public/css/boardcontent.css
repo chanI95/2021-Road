@@ -1,0 +1,21 @@
+/***************************/
+/****** boardcontent *******/
+/***************************/
+
+.boardcontent-content img{
+    border:none;
+}
+
+.board-content .boardcontent-content{
+    float:right;
+}
+.boardcontent-content{
+    width:850px;
+    height:500px;
+    margin-left: 20px;
+    border:1px solid #eee;
+}
+.boardcontent-content img {
+    width:10%;
+    height:10%;
+}

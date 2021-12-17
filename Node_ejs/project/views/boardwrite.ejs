@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!--  bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>로드</title>
+<body>
+
+<header>
+    <%- include('./partials/header.ejs') -%>
+</header>
+<div class="columns" style="width:1902px; margin-top:20px;"></div>
+<form action="/board" method="post" enctype="multipart/form-data">
+    <div class="columns has-background-light">
+        <div class="column"></div>
+        <div class="column is-half has-background-white" style="margin-top:50px; margin-bottom:50px; border-radius: 2%; height:600px; padding:20px 50px;">
+
+            <!-- 타이틀 -->
+            <div class="columns">
+                <div class="column is-10"></div>
+                <div class="column is-1">community/write</div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="is-normal" style="text-align: right; width:50px; margin-right:10px; line-height: 30px; ">
+                    <label class="label">title</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input class="input" id="my-input" name="board_title">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 작성자 -->
+            <div class="field is-horizontal">
+                <div class="is-normal" style="text-align: right; width:50px; margin-right:10px; line-height: 30px; ">
+                    <label class="label">user</label>
+                </div>
+                <div class="field-body" >
+                    <div class="field">
+                        <p class="control ">
+                            <input class="input" class="form-control-file" id="my-input" type="text" name="boarder_name">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 이미지 -->
+            <div class="field is-horizontal">
+                <div class="is-normal" style="text-align: right; width:50px; margin-right:10px; line-height: 30px; ">
+                    <label class="label">img</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input id="my-input" class="form-control-file" type="file" name="board_img">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 컨텐츤 -->
+            <div class="field is-horizontal">
+                <div class="is-normal" style="text-align: right; width:50px; margin-right:10px; line-height: 30px; ">
+                    <label class="label">content</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <textarea class="textarea has-fixed-size" style="height:300px;" placeholder="Fixed size textarea" id="my-input" class="form-control" type="text" name="board_content"></textarea>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="button is-danger" style="float:right; margin-right:10px;" type="submit">write</button>
+        </div>
+        <div class="column"></div>
+    </div>
+</form>
+
+
+<%- include('./partials/footer.ejs') %>
+</body>
+</html>

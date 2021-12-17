@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI - first</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/mbti.css">
+</head>
+
+
+<body>
+    <header>
+        <%- include('./partials/header.ejs') -%>
+    </header>
+
+    <!------------------------------------------ START---------------------------------->
+    <div class="mbti-result">
+            <div class="mbti-result-content">
+                <!-- 막걸리 추천 -->
+                <div class="mbti-comment-top">
+                    <div class="mbti-comment">
+                        <p>Outstanding Recommendations</p>
+                    </div>
+                    <div class="mbti-comment">
+                        <p>Food Matches with Korean Liquor</p>
+                    </div>
+                </div>
+                <% for(let i = 0; i<snacks.length; i++) {
+                    var data = snacks[i];
+                %>
+                <!-- 첫번째 -->
+                <div class="result-content">
+                    <div class="drink">
+                        <div class="drink-rank">
+                            <span> <%= i+1 %></span> </div>
+                        <!-- 막걸리 사진 -->
+                        <div class="drink-img">
+                            <img src="<%= data.liquor_img %>">
+                        </div>
+                        <!-- 막걸리 내용 -->
+                        <div class="drink-content">
+                            <!-- 막걸리 이름 -->
+                            <div class="drink-name"><%= data.liquor_name%></div>
+                            <!-- 막걸리 내용 -->
+                            <div class="drink-text"><%= data.liquor_raw2%></div>
+                        </div>
+                    </div>
+                    <div class="food">
+                        <div class="food-img">
+                            <img src="<%= data.snack_img %>">
+                        </div>
+                        <!-- 막걸리 내용 -->
+                        <div class="food-content">
+                            <!-- 막걸리 이름 -->
+                            <div class="food-name"><%= data.snack_name %></div>
+                            <div class="food-name"><%= data.snack_e_name %></div>
+                            <!-- 막걸리 내용 -->
+                            <div class="food-text"><%= data.snack_content %></div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                <!-- 첫번째 끝 -->
+            </div>
+
+    </div>
+    <!------------------------------------------- END ----------------------------------->
+
+    <!-- footer -->
+    <%- include('./partials/footer.ejs') -%>
+
+</body>
+<script src="js/header-footer.js" defer type="text/javascript"></script>
+</html>
